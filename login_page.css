@@ -1,8 +1,7 @@
-html{
+/* html{
     width: 414px;
-    height: 736px;
-    
-}
+    height: 736px;  
+} */
 
 #upper-left{
     position: absolute;
@@ -30,9 +29,9 @@ html{
 
 #lets-get-start{
     position: absolute;
-    width: 331px;
+    width: 293px;
     height: 49px;
-    left: 44px;
+    left: 60px;
     top: 128px;
 }
 
@@ -107,6 +106,7 @@ html{
     line-height: 150%;
     letter-spacing: -0.019em; 
     color: #1E1E1E;
+    cursor: default;
 }
 
 #password-title{
@@ -123,6 +123,7 @@ html{
     line-height: 150%; 
     letter-spacing: -0.019em;
     color: #1E1E1E;
+    cursor: default;
 }
 
 @font-face {

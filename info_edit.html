@@ -4,10 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="info_edit.css">
+    <link rel="stylesheet" href="reset.css">
+    <!-- <link rel="stylesheet" href="info_edit.css"> -->
+    <link rel="stylesheet" href="style.css">
     <title>Scooter Go</title>
+    <style>
+        #preview-img-container{
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            left: 95px;
+            top: 109px;
+            border-radius: 20px;
+        }
+        #preview-img{
+            border-radius: 40px;
+        }
+        label{
+            cursor: pointer;
+        }
+        input[type=file]{
+            display:none;
+        }
+    </style>
 </head>
 <body>
-    <script src="script.js"></script>
+    <div class="background">
+        <img src="picture/logo.png" id="logo">
+        <p id="personal-info-text" class="text">Personal Information</p>
+        <form action="/somewhere/to/upload" enctype="multipart/form-data">
+            <label>
+                <input type="file" onchange="readURL(this)" targetID="preview-img" accept="image/gif, image/jpeg, image/png">
+                <div id="preview-img-container">
+                    <img id="preview-img" src="picture/upload-img.png" width="220" height="220">
+                </div>
+            </label>
+        </form>
+        <!-- <img src="picture/upload-img.png" id="upload-img"> -->
+        <p id="age-title" class="text">Age</p>
+        <p id="city-title" class="text">City</p>
+        <p id="hobbies-title" class="text">Hobbies</p>
+        <p id="aboutme-title" class="text">About me</p>
+        <input type="text" id="age-input" class="input" placeholder="">
+        <input type="text" id="city-input" class="input" placeholder="">
+        <input type="text" id="hobbies-input" class="input" placeholder="">
+        <textarea id="aboutme-input" class="input" placeholder=""></textarea>
+        <a href="#">
+            <input type="button"  value="Get start" class="" id="getstart-btn">
+        </a>
+    </div>
+    <script>
+        function readURL(input){
+            if(input.files && input.files[0]){
+                var imageTagID = input.getAttribute("targetID");       
+                var reader = new FileReader();      
+                reader.onload = function (e) {
+                    var img = document.getElementById(imageTagID);
+                    img.setAttribute("src", e.target.result)
+                    }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+    <!-- <script src="script.js"></script> -->
 </body>
 </html>

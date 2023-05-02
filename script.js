@@ -1,4 +1,6 @@
 window.addEventListener("load", function (){
+
+    // male & female button change color
     const maleBtn = document.getElementById("male-btn");
     const femaleBtn = document.getElementById("female-btn");
 
@@ -23,6 +25,11 @@ window.addEventListener("load", function (){
     femaleBtn.addEventListener("click",(event)=>{
         femaleBtnChangeColor();
     })
+
+
+    
+
+
     
 
 

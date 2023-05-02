@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scooter Go</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #user-info{
+            width: 414px;
+            height: 736px;
+            background-image: url(picture/2-0-background.png);
+            background-size: 414px 736px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="user-info"></div>
+
+    <script>
+        // username 判斷
+        username = sessionStorage.getItem('user');
+        let userChoose = document.getElementById("user-info");
+        console.log(username);
+
+        if (username == "driver"){
+            userChoose.style.backgroundImage = "url('picture/driver_page.png')";
+        }
+        else if (username == "passenger"){
+            userChoose.style.backgroundImage = "url('picture/passenger_page.png')";
+        }
+    </script>
+    <!-- <script src="page2.js"></script> -->
+</body>
+</html>
