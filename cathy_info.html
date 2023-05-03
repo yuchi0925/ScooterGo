@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Scooter Go</title>
+    <style>
+        #preview-img-container{
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            left: 95px;
+            top: 109px;
+            border-radius: 20px;
+        }
+        #preview-img{
+            border-radius: 40px;
+        }
+        label{
+            cursor: pointer;
+        }
+        input[type=file]{
+            display:none;
+        }
+        .background1{
+            width: 414px;
+            height: 736px;
+            background-image: url(picture/information_n1.png);
+            background-size: 414px 736px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background1">
+    
+        <a href="#">
+            <input type="button"  value="Edit" class="" id="edit-btn">
+        </a>
+        <a href="info_page.html">
+            <input type="button"  value="OK" class="" id="ok-btn">
+        </a>
+
+    </div>
+    <script>
+    //     // Show Username on Information Page
+    //     username = sessionStorage.getItem('signup-name');
+    //     let showUsername = document.getElementById("info-username");
+    //     console.log(username);
+    //     showUsername.innerHTML = username;
+
+    //     // Get Age, City, Hobbies, About me
+    //     const GetStartBTn = document.getElementById("getstart-btn");
+    //         GetStartBTn.addEventListener("click",(event)=>{
+    //             let age = document.getElementById("age-input").value;
+    //             let city = document.getElementById("city-input").value;
+    //             let hobbies = document.getElementById("hobbies-input").value;
+    //             let aboutMe = document.getElementById("aboutme-input").value;
+    //             sessionStorage.setItem('age', age);
+    //             sessionStorage.setItem('city', city);
+    //             sessionStorage.setItem('hobbies', hobbies);
+    //             sessionStorage.setItem('aboutMe', aboutMe);
+
+    //             let img_path = document.getElementById("preview-img").getAttribute("src");  
+    //             sessionStorage.setItem('img_path', img_path);
+    //             // console.log(img_path);
+    //         })
+
+    //     let showUserImg = document.getElementById("preview-img");
+    //     img_path = sessionStorage.getItem('img_path');
+    //     showUserImg.src = img_path;
+
+    //     let showAge = document.getElementById("age-input");
+    //     age = sessionStorage.getItem('age');
+    //     showAge.value = age;
+
+    //     let showCity = document.getElementById("city-input");
+    //     city = sessionStorage.getItem('city');
+    //     showCity.value = city;
+
+    //     let showHobbies = document.getElementById("hobbies-input");
+    //     hobbies = sessionStorage.getItem('hobbies');
+    //     showHobbies.value = hobbies;
+
+    //     let showAboutMe = document.getElementById("aboutme-input");
+    //     aboutMe = sessionStorage.getItem('aboutMe');
+    //     showAboutMe.value = aboutMe;
+
+    // </script>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
