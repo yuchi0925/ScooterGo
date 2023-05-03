@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="reset.css">
+    <!-- <link rel="stylesheet" href="info_edit.css"> -->
     <link rel="stylesheet" href="style.css">
     <title>Scooter Go</title>
     <style>
@@ -25,34 +26,66 @@
         input[type=file]{
             display:none;
         }
+
+        /* Information Page */
+        #edit-btn{
+            border: 1px solid #B19191;
+            border-radius: 22px;
+            background: #B19191;
+            color:#FFFFFF;
+            position: absolute;
+            width: 143px;
+            height: 43px;
+            left: 54px;
+            top: 645px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        #ok-btn{
+            border: 1px solid #B19191;
+            border-radius: 22px;
+            background: #B19191;
+            color:#FFFFFF;
+            position: absolute;
+            width: 143px;
+            height: 43px;
+            left: 217px;
+            top: 645px;
+            font-size: 20px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="background">
         <img src="picture/logo.png" id="logo">
         <p id="personal-info-text" class="text">Personal Information</p>
-        <form action="/somewhere/to/upload" enctype="multipart/form-data">
-            <label>
-                <input type="file" onchange="readURL(this)" targetID="preview-img" accept="image/gif, image/jpeg, image/png">
-                <div id="preview-img-container">
-                    <img id="preview-img" src="picture/upload-img.png" width="220" height="220">
-                </div>
-            </label>
-        </form>
+        <div id="preview-img-container">
+            <img id="preview-img" src="picture/upload-img.png" width="220" height="220">
+        </div>
+
         <!-- <img src="picture/upload-img.png" id="upload-img"> -->
         <p id="info-username" class="text">Username</p>
         <p id="age-title" class="text">Age</p>
         <p id="city-title" class="text">City</p>
         <p id="hobbies-title" class="text">Hobbies</p>
         <p id="aboutme-title" class="text">About me</p>
-        <input type="text" id="age-input" class="input" placeholder="">
+        <p id="age-text" class="text">22</p>
+        <p id="city-text" class="text">Tainan, Kaohsiung</p>
+        <p id="hobbies-text" class="text">Basketball, Volley</p>
+        <p id="aboutme-text" class="text">If you have some free time, I would be happy to show you around.</p>
+        
+        <!-- <input type="text" id="age-input" class="input" placeholder="">
         <input type="text" id="city-input" class="input" placeholder="">
         <input type="text" id="hobbies-input" class="input" placeholder="">
-        <textarea id="aboutme-input" class="input" placeholder=""></textarea>
-        <a href="info_page.html">
-            <input type="button"  value="Get start" class="" id="getstart-btn">
+        <textarea id="aboutme-input" class="input" placeholder=""></textarea> -->
+        <a href="info_edit.html">
+            <input type="button"  value="Edit" class="" id="edit-btn">
         </a>
-
+        <a href="#">
+            <input type="button"  value="OK" class="" id="ok-btn">
+        </a>
     </div>
     <script>
         // Upload Image
@@ -64,53 +97,34 @@
                     var img = document.getElementById(imageTagID);
                     img.setAttribute("src", e.target.result)
                     }
-                reader.readAsDataURL(input.files[0]);    
+                reader.readAsDataURL(input.files[0]);
             }
         }
-        
 
-        // Show Username on Information Page
+        // Show Age, City, Hobbies, About me on Information
         username = sessionStorage.getItem('signup-name');
         let showUsername = document.getElementById("info-username");
         console.log(username);
         showUsername.innerHTML = username;
 
-        // Get Age, City, Hobbies, About me
-        const GetStartBTn = document.getElementById("getstart-btn");
-            GetStartBTn.addEventListener("click",(event)=>{
-                let age = document.getElementById("age-input").value;
-                let city = document.getElementById("city-input").value;
-                let hobbies = document.getElementById("hobbies-input").value;
-                let aboutMe = document.getElementById("aboutme-input").value;
-                sessionStorage.setItem('age', age);
-                sessionStorage.setItem('city', city);
-                sessionStorage.setItem('hobbies', hobbies);
-                sessionStorage.setItem('aboutMe', aboutMe);
-
-                let img_path = document.getElementById("preview-img").getAttribute("src");  
-                sessionStorage.setItem('img_path', img_path);
-                // console.log(img_path);
-            })
-
-        let showUserImg = document.getElementById("preview-img");
-        img_path = sessionStorage.getItem('img_path');
-        showUserImg.src = img_path;
-
-        let showAge = document.getElementById("age-input");
         age = sessionStorage.getItem('age');
-        showAge.value = age;
-
-        let showCity = document.getElementById("city-input");
         city = sessionStorage.getItem('city');
-        showCity.value = city;
-
-        let showHobbies = document.getElementById("hobbies-input");
         hobbies = sessionStorage.getItem('hobbies');
-        showHobbies.value = hobbies;
-
-        let showAboutMe = document.getElementById("aboutme-input");
         aboutMe = sessionStorage.getItem('aboutMe');
-        showAboutMe.value = aboutMe;
+        let showAge = document.getElementById("age-text");
+        let showCity = document.getElementById("city-text");
+        let showHobbies = document.getElementById("hobbies-text");
+        let showAboutMe = document.getElementById("aboutme-text");
+        showAge.innerHTML = age;
+        showCity.innerHTML = city;
+        showHobbies.innerHTML = hobbies;
+        showAboutMe.innerHTML = aboutMe;
+
+        
+        img_path = sessionStorage.getItem('img_path');
+        let showUserImg = document.getElementById("preview-img");
+        showUserImg.src = img_path;
+        
 
     </script>
     <!-- <script src="script.js"></script> -->

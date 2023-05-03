@@ -1,4 +1,7 @@
+/*             */
 /*   共用css   */
+/*             */
+
 /* html{
     background-color: palegoldenrod;
 } */
@@ -34,8 +37,11 @@
     left: 44px;
     top: 23px;
 }
-
-
+/*            */
+/*            */
+/* Login Page */
+/*            */
+/*            */
 #upper-left{
     position: absolute;
     width: 241px;
@@ -281,13 +287,10 @@
     color: #1E1E1E;
     cursor: default;
 }
-
-
-
-
-
+/*                  */
 /*                  */
 /*   Sign Up Page   */
+/*                  */
 /*                  */
 .input{
     box-sizing: border-box;
@@ -409,9 +412,10 @@
     font-size: 20px;
     cursor: pointer;
 }
-
+/*                           */
 /*                           */
 /*   Information Edit Page   */
+/*                           */
 /*                           */
 #personal-info-text{
     position: absolute;
@@ -432,6 +436,15 @@
     height: 219.59px;
     left: 95px;
     top: 109px;
+}
+
+#info-username{
+    position: absolute;
+    left: 62px;
+    top: 340px;
+    font-weight: 500;
+    font-size: 32px;
+    color: #000000;
 }
 
 #age-title{
@@ -512,4 +525,44 @@
     top: 664px;
     font-size: 20px;
     cursor: pointer;
+}
+/*                      */
+/*                      */
+/*   Information Page   */
+/*                      */
+/*                      */
+#age-text{
+    left: 117px;
+    top: 398px; 
+    font-weight: 400;
+    font-size: 18px;
+    color: #A46666;
+    cursor: default;
+}
+
+#city-text{
+    left: 117px;
+    top: 442px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #A46666;
+    cursor: default;
+}
+
+#hobbies-text{
+    left: 154px;
+    top: 485px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #A46666;
+    cursor: default;
+}
+
+#aboutme-text{
+    left: 164px;
+    top: 528px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #A46666;
+    cursor: default;
 }
